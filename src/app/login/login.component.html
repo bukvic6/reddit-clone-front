@@ -8,19 +8,20 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
 
-            <form>
+            <form class="form-login" (ngSubmit)="login()">
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" />
-              <label class="form-label" for="form3Example3">Email address</label>
+              <label class="form-label" for="username">Username</label>
+              <input type="text" id="username" class="form-control" name="username" [(ngModel)]="user.username" placeholder="Enter username" />
+              
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" />
               <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" id="form3Example4" name="password" [(ngModel)]="user.password" class="form-control form-control-lg"
+                placeholder="Enter password" />
+              
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
