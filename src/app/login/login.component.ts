@@ -19,20 +19,5 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
   }
-  login():void{
-    this.authenticationService.login(this.user.username, this.user.password).subscribe(
-      (loggedIn:boolean) => {
-        if(loggedIn){
-          this.router.navigate(['/main']);          
-        }
-      }
-    ,
-    (err:Error) => {
-      if(err.toString()==='Ilegal login'){
-        this.wrongUsernameOrPass = true;
-        console.log(err);
-      }
-    });
-  }
-
+  
 }
