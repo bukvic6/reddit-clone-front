@@ -1,7 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { UserServService } from './user-serv.service';
+
+import { UserService } from '../services/user.service';
+import { UserModel } from './userModel';
+
+
 
 @Component({
   selector: 'app-users',
@@ -9,24 +12,17 @@ import { UserServService } from './user-serv.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  users: Array<UserModel> = [];
 
-  public user: User[] = [];
-  constructor(private userService: UserServService ) { }
 
-  ngOnInit() {
-    this.getUsers();
+  constructor(private userService:UserService) {
+    this.userService.getAllPosts().subscribe(data => {
+      this.users = data;
+    })
+   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-  public getUsers(): void {
-    this.userService.getUsers().subscribe(
-      (response: User[]) => {
-        this.user = response;
-        console.log(this.user);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
 
 }

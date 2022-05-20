@@ -11,6 +11,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationService } from './services/authentication-service.service';
+import { UserService } from './services/user.service';
 import { UsersComponent } from './users/users.component';
 
 
@@ -28,12 +29,14 @@ import { UsersComponent } from './users/users.component';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
 
     
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    UserService
+ 
     
 
   ],
