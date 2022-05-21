@@ -13,6 +13,6 @@ export class UserService {
 
 
   getAllPosts(): Observable<Array<UserModel>> {
-    return this.http.get<Array<UserModel>>('http://localhost:8080/api/users/all');
+    return this.http.get<Array<UserModel>>('http://localhost:8080/api/users');
   }
 }

@@ -6,35 +6,46 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <form [formGroup]="signupForm">
             <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h1>
 
             
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Username </label>
-                <input type="email" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter a valid username" />
+              <input type="text" [formControlName]="'username'"class="form-control" required id="username"
+                placeholder="Enter a valid username" autofocus/>
+                <span *ngif="!signupForm.get('username').valid && signupForm.get('username').touched">
+                  Please provide a valid Password
+              </span>  
             </div>
             
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Email address</label>
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" />
+              
+              <input type="text" [formControlName]="'email'" id="email_address" class="form-control" name="email-address" required
+                placeholder="Enter a valid email address" autofocus/>
+              <span *ngif="!signupForm.get('email').valid && signupForm.get('email').touched">
+                Please provide a valid email
+              </span>
             </div>
+            
   
             
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" />
+              <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" required
+                placeholder="Enter password" autofocus />
+                <span *ngif="!signupForm.get('password').valid && signupForm.get('password').touched">
+                  Please provide a valid Password
+                </span>  
             </div>
   
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
+            <span class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Continue</button>
               <p class="small mb-5 pb-lg-2">Already a redditor? <a [routerLink]="['/login']"
                   class="link-danger">LOG IN</a></p>
-            </div>
+                </span>
   
           </form>
         </div>
