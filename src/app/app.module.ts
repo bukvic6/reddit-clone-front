@@ -12,6 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserService } from './services/user.service';
 import { UsersComponent } from './users/users.component';
+import { HomeComponent } from './home/home.component';
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { VoteButtonComponent } from './post/vote-button/vote-button.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { UsersComponent } from './users/users.component';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent,
+    ViewPostComponent,
+    PostListComponent,
+    VoteButtonComponent
   ],
   imports: [
     BrowserModule,

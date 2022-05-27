@@ -32,7 +32,7 @@
   
             
             <div class="form-outline mb-3">
-              <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label" for="password">Password</label>
               <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" required
                 placeholder="Enter password" autofocus />
                 <span *ngif="!signupForm.get('password').valid && signupForm.get('password').touched">
