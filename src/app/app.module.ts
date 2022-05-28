@@ -16,6 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { VoteButtonComponent } from './post/vote-button/vote-button.component';
+import { CreateCommunityComponent } from './community/create-community/create-community.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { VoteButtonComponent } from './post/vote-button/vote-button.component';
     HomeComponent,
     ViewPostComponent,
     PostListComponent,
-    VoteButtonComponent
+    VoteButtonComponent,
+    CreateCommunityComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
