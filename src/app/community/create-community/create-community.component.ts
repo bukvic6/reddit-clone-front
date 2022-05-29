@@ -1,8 +1,8 @@
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
+
 import { CommunityModel } from '../community-response';
 import { CommunityService } from '../community.service';
 
@@ -32,13 +32,13 @@ export class CreateCommunityComponent implements OnInit {
   ngOnInit(){
   }
   cancel() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/posts');
   }
   createCommunity(){
     this.communityModel.name = this.createCommunityForm.get('name')?.value;
     this.communityModel.description = this.createCommunityForm.get('description')?.value;
     this.communityService.createCommunity(this.communityModel).subscribe(data => {
-      this.router.navigateByUrl('/')
+      console.log(data);
     })
   }
 
