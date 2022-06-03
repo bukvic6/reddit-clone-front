@@ -20,8 +20,8 @@ export class CreateCommunityComponent implements OnInit {
 
   constructor(private router: Router, private communityService: CommunityService) {
     this.createCommunityForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    description: new FormControl('',Validators.required)
+    name: new FormControl(''),
+    description: new FormControl('')
   });
   this.communityModel = {
     name: '',
@@ -30,6 +30,10 @@ export class CreateCommunityComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.createCommunityForm = new FormGroup({
+      name: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+      description: new FormControl('',Validators.required)
+    })
   }
   cancel() {
     this.router.navigateByUrl('/posts');
