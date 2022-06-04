@@ -1,29 +1,20 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="post-content">
-             
-              <div class="post-container">
-                <div class="post-detail">
-                  <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Community name</a> <span class="following">following</span></h5>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                  </div>
-                  <div class="line-divider"></div>
 
-                </div>
-              </div>
-              <div class="reaction">
-                <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 13</a>
-                <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-              </div>
-              
-            </div>
-        </div>
+<div class="row post" *ngFor="let post of posts">
+
+  <div class="col-md-11">
+    <span class="subreddit-info">
+      <!-- <span class="subreddit-text"><a class="posturl" routerLink="">{{post.subredditName}}</a></span> -->
+      <!-- <span> . Posted by <a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
+      <span> . {{post.duration}}</span> -->
+    </span>
+    <hr />
+    <div class="post-title">
+      <a class="postname">{{post.title}}</a>
     </div>
+    <div>
+      <p class="post-text" [innerHtml]="post.text"></p>
+    </div>
+    <hr />
+
+  </div>
 </div>
