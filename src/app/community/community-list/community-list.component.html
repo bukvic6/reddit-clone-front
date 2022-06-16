@@ -1,13 +1,9 @@
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h3>Communities:</h3>
-        <ul>
-          <li *ngFor="let community of communities">
-            <a routerLink="/view-community/{{community.id}}">{{community.name}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+<div class="card mb-4">
+  <div class="card-header">Communities:</div>
+  <div class="card-body">
+    <ul>
+      <li *ngFor="let community of communities">
+        <a routerLink="/view-community/{{community.id}}">{{community.name}}</a>
+      </li>
+    </ul>
   </div>

@@ -35,6 +35,9 @@ export class CreateCommunityComponent implements OnInit {
       description: new FormControl('',Validators.required)
     })
   }
+  HomePage(){
+    this.router.navigate(['/posts']);
+  }
   cancel() {
     this.router.navigateByUrl('/posts');
   }
@@ -43,6 +46,8 @@ export class CreateCommunityComponent implements OnInit {
     this.communityModel.description = this.createCommunityForm.get('description')?.value;
     this.communityService.createCommunity(this.communityModel).subscribe(data => {
       console.log(data);
+      this.HomePage();
+
     })
   }
 

@@ -15,8 +15,11 @@ export class CommunityService {
     communityModel);
   }
   
-  getCommunityList(): Observable<Array<CommunityModel>> {
-    return this.http.get<Array<CommunityModel>>('http://localhost:8080/api/community');
+  getCommunityList(): Observable<CommunityModel[]> {
+    return this.http.get<CommunityModel[]>('http://localhost:8080/api/community');
   }
 
+  getCommunityById(id: number): Observable<CommunityModel>{
+    return this.http.get<CommunityModel>('http://localhost:8080/api/community/' + id)
+  }
 }

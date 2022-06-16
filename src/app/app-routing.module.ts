@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'posts', component: HomeComponent},
   { path: 'create-community', component: CreateCommunityComponent},
   { path: 'view-community/:id', component: ViewCommunityComponent},
-  { path: 'create-post', component: CreatePostComponent}
+  { path: 'create-post/id', component: CreatePostComponent}
 ];
 
 @NgModule({

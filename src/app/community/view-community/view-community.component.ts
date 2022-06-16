@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NumberValueAccessor } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CommunityModel } from '../community-response';
+import { CommunityService } from '../community.service';
 
 @Component({
   selector: 'app-view-community',
@@ -7,13 +10,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-community.component.css']
 })
 export class ViewCommunityComponent implements OnInit {
+  id: number;
+  community: CommunityModel;
 
-  constructor(private router: Router) { }
+  constructor(private route: ActivatedRoute,private router: Router, private communityservice: CommunityService) { }
 
-  ngOnInit(){
+  ngOnInit(): void{
+    this.id = this.route.snapshot.params['id'];
+    this.community = new CommunityModel();
+    this.communityservice.getCommunityById(this.id).subscribe( data => {
+      this.community = data
+    })
   }
-  createPost() {
-    this.router.navigateByUrl('/create-post');
+  createPost(id:number) {
+    this.router.navigate(['create-post',id]);
   }
 
 

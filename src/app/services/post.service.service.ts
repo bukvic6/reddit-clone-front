@@ -10,8 +10,14 @@ export class PostServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPost(): Observable<Array<PostModel>>{
-    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/all');
+  getAllPost(): Observable<PostModel[]>{
+    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/all');
 
+  }
+  createPost(postModel:PostModel): Observable<Object>{
+    return this.http.post('http://localhost:8080/api/posts', postModel);
+  }
+  deletePost(id: number): Observable<any>{
+    return this.http.delete('http://localhost:8080/api/posts/' + id)
   }
 }
