@@ -25,6 +25,9 @@ export class ViewCommunityComponent implements OnInit {
   createPost(id:number) {
     this.router.navigate(['create-post',id]);
   }
+  EditCommunity(id:number) {
+    this.router.navigate(['editCommunity',id]);
+  }
 
 
 }

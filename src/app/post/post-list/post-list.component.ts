@@ -47,15 +47,18 @@ export class PostListComponent implements OnInit {
       console.log(data);
       this.HomePage();
     })
-
 }
 HomePage(){
   this.router.navigate(['/posts']);
 }
 deletePost(id:number){
-  this.postService.deletePost(id).subscribe({
-    next: (data) => console.log(data)
+  this.postService.deletePost(id).subscribe(data => {
+    this.posts = data;
    
   });
 }
+editPost(id:number){
+  this.router.navigate(['updatePost',id]);
+}
+   
 }

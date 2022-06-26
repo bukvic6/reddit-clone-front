@@ -1,6 +1,12 @@
 
 export class CommunityModel {
-    id?: number;
+    id: number;
+    name: string;
+    description: string;
+    
+}
+
+export class CommunityModelEdit {
     name: string;
     description: string;
     

@@ -20,4 +20,10 @@ export class PostServiceService {
   deletePost(id: number): Observable<any>{
     return this.http.delete('http://localhost:8080/api/posts/' + id)
   }
+  getPostById(id:number): Observable<PostModel>{
+    return this.http.get<PostModel>('http://localhost:8080/api/posts/' + id)
+  }
+  savePost(id:number,postModel: any): Observable<any> {
+    return this.http.put('http://localhost:8080/api/posts/edit/' + id, postModel);
+  }  
 }

@@ -10,3 +10,9 @@ export class PostModel{
 
 
 }
+export class PostMod{
+    title:string;
+    text:string;
+
+
+}

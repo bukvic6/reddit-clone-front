@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { CommunityModel } from '../community-response';
+import { CommunityModel, CommunityModelEdit } from '../community-response';
 import { CommunityService } from '../community.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { CommunityService } from '../community.service';
 export class CreateCommunityComponent implements OnInit {
 
   createCommunityForm: FormGroup;
-  communityModel: CommunityModel;
+  communityModel: CommunityModelEdit;
   name = new FormControl('');
   description = new FormControl('');
 

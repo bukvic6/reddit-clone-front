@@ -21,6 +21,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { CommunityListComponent } from './community/community-list/community-list.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ViewCommunityComponent } from './community/view-community/view-community.component';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
+import { EditCommunityComponent } from './community/edit-community/edit-community.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { ViewCommunityComponent } from './community/view-community/view-communit
     SideBarComponent,
     CommunityListComponent,
     CreatePostComponent,
-    ViewCommunityComponent
+    ViewCommunityComponent,
+    EditPostComponent,
+    EditCommunityComponent
   ],
   imports: [
     BrowserModule,

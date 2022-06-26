@@ -47,3 +47,9 @@
 .vote.on {
   background-position: 0 2px;
 }
+.post-footer{
+  border-top: 1px;
+}
+.post{
+  margin:10px
+}

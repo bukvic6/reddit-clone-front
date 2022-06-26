@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="create-subreddit-container">
+      <form class="post-form" [formGroup]="updateCommunityForm" (ngSubmit)="EditPost()">
+        <div class="form-group">
+          <div class="create-subreddit-heading">Update Community</div>
+          <hr />
+          <input type="text" [formControlName]="'title'" id="title" class="form-control" required minlength="3" style="margin-top: 5px"
+            placeholder="Text">
+
+
+          <textarea type="text" [formControlName]="'text'" style="width: 100%; margin-top: 5px"
+            placeholder="Text"></textarea>
+          <div>
+            <div style="margin-top: 5px" class="float-right">
+              <button (click)="Cancel()" class="btnDiscard">Cancel</button>
+              <button class="btnCreateSubreddit" [disabled]="!updateCommunityForm.valid">Update</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
