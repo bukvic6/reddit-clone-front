@@ -14,6 +14,10 @@ export class PostServiceService {
     return this.http.get<PostModel[]>('http://localhost:8080/api/posts/all');
 
   }
+  getPostsByCommunityId(id:number): Observable<PostModel[]>{
+    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/communityPosts/' + id);
+
+  }
   createPost(postModel:PostModel): Observable<Object>{
     return this.http.post('http://localhost:8080/api/posts', postModel);
   }

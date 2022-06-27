@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
 
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+/.[a-z]{2,4}$";
-  pwdPattern = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$";
   signupForm: FormGroup;
   signupRequest:SignupRequest
   constructor(private authService:AuthService, private router: Router) {
@@ -27,8 +25,8 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(){
     this.signupForm = new FormGroup({
       username: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
-      email: new FormControl('',[Validators.required, Validators.minLength(3), Validators.pattern(this.emailPattern)]),
-      password: new FormControl('',[ Validators.required, Validators.pattern(this.pwdPattern)]),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('',[ Validators.required]),
 
     })
   }
