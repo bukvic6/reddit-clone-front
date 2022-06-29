@@ -1,12 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { LocalStorageService } from 'ngx-localstorage';
+import { map, Observable } from 'rxjs';
 import { SignupRequest } from '../registration/signupRequest.payload';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,3 +19,4 @@ signup(signupRequest: SignupRequest): Observable<any>{
 
 }
 }
+

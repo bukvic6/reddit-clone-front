@@ -6,9 +6,15 @@
 
 </div>
 
-    <button (click)="downvote(post.id)">Vote Down</button>
+    <!-- <button (click)="downvote(post.id)">Vote Down</button> -->
+    <fa-icon (click)="downvote(post.id)" [icon]="faArrowUp"  class="downvote" [style.color]="upvoteColor" >
+      <!-- [style.color]="post.upVote ? 'green':''" -->
+  </fa-icon>
     <p>{{post.karma}}</p>
-    <button (click)="upvote(post.id)">Vote up</button>
+      <fa-icon (click)="upvote(post.id)" [icon]="faArrowDown"  class="upvote" [style.color]="downvoteColor">
+        <!-- [style.color]="post.downVote ? 'red':''" -->
+    </fa-icon>
+    <!-- <button (click)="upvote(post.id)">Vote up</button> -->
 
     <div class="card-body">
         <div class="small text-muted">January 1, 2022</div>

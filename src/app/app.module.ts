@@ -1,10 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
@@ -23,6 +24,7 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ViewCommunityComponent } from './community/view-community/view-community.component';
 import { EditPostComponent } from './post/edit-post/edit-post.component';
 import { EditCommunityComponent } from './community/edit-community/edit-community.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -51,12 +53,17 @@ import { EditCommunityComponent } from './community/edit-community/edit-communit
     RouterModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     ReactiveFormsModule
 
     
   ],
   providers: [
-    UserService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },   UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faArrowUp , faArrowDown} from '@fortawesome/free-solid-svg-icons';
 import { PostServiceService } from 'src/app/services/post.service.service';
 import { ReactionService } from 'src/app/services/reaction.service';
 
@@ -16,6 +17,11 @@ import { vote } from '../vote-button/vote';
 export class PostListComponent implements OnInit {
   posts: PostModel[];
   reaction: vote = new vote();
+  faArrowUp = faArrowUp;
+  faArrowDown = faArrowDown;
+  upvoteColor: string;
+  downvoteColor: string;
+
  
 
 
@@ -34,6 +40,7 @@ export class PostListComponent implements OnInit {
     this.reaction.postId = postId
     this.reaction.type = Type.UPVOTE;
     this.vote();
+    this.upvoteColor = '';
     
 
   }
@@ -41,11 +48,11 @@ export class PostListComponent implements OnInit {
     this.reaction.postId = postId;
     this.reaction.type = Type.DOWNVOTE;
     this.vote();
+    this.downvoteColor = '';
   }
   private vote(){
-    this.reactionService.reaction(this.reaction).subscribe(data => {
-      console.log(data);
-      this.HomePage();
+    this.reactionService.reaction(this.reaction).subscribe(() => {
+      this.reaction = this.reaction;
     })
 }
 HomePage(){

@@ -53,3 +53,14 @@
 .post{
   margin:10px
 }
+
+.upvote {
+  color: green;
+}
+.downvote {
+  color: red;
+}
+.upvote,.downvote {
+  cursor: pointer;
+  border-radius: 2px solid;
+}
